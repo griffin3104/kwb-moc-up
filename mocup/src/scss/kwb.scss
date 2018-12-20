@@ -1,0 +1,29 @@
+/* 縦型コンテナ */
+.container-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 横型コンテナ */
+.container-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* 非表示コンテナ */
+.container-non {
+  display: none;
+}
+
+/* １個分ボックス */
+.box-one {
+  flex: 1;
+}
+
+.content-caption {
+  background-color: #3880c0;
+  font-weight: bold;
+  color: #fff;
+  padding: 5px 8px 4px 8px;
+  font-size: 0.8rem;
+}
