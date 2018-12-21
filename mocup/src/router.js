@@ -12,7 +12,8 @@ export default new Router({
       name: "PcMode1",
       components: {
         header: () => import("./components/pc/KwbPcHeader.vue"),
-        panel: () => import("./components/pc/KwbPcPanel.vue")
+        panel: () => import("./components/pc/KwbPcPanel.vue"),
+        map_header: () => import("./components/pc/KwbPcMapHeader.vue")
       }
     },
     {
@@ -20,7 +21,8 @@ export default new Router({
       name: "PcMode2",
       components: {
         header: () => import("./components/pc/KwbPcHeader.vue"),
-        panel: () => import("./components/pc/KwbPcPanel.vue")
+        panel: () => import("./components/pc/KwbPcPanel.vue"),
+        map_header: () => import("./components/pc/KwbPcMapHeader.vue")
       },
       children: [
         {
@@ -75,7 +77,8 @@ export default new Router({
       name: "MbMode",
       components: {
         header: () => import("./components/mb/KwbMbHeader.vue"),
-        panel: () => import("./components/mb/KwbMbPanel.vue")
+        panel: () => import("./components/mb/KwbMbPanel.vue"),
+        map_header: () => import("./components/mb/KwbMbMapHeader.vue")
       }
     }
   ]

@@ -23,6 +23,9 @@ export default {
   methods: {
     resize() {
       console.log("hoge?", window.innerWidth, window.innerHeight);
+      if (window.innerWidth < 1000 || window.innerHeight < 660) {
+        location.pathname = "/mb";
+      }
     }
   },
   created: function() {
@@ -30,11 +33,13 @@ export default {
   },
   mounted: function() {
     window.addEventListener("resize", this.resize);
+    /*
     console.log("1:", location.href);
     console.log("2:", location.hostname);
     console.log("3:", location.pathname);
     console.log("4:", location.search);
     console.log("5:", location.protocol);
+    */
   },
   destroyed() {
     window.removeEventListener("resize", this.resize);
@@ -55,7 +60,7 @@ html {
     ‘メイリオ’, ‘Meiryo’, ‘Yu Gothic’, ‘ＭＳ Ｐゴシック’, ‘MS PGothic’;
 }
 body {
-  background-color: #2070a0;
+  background-color: #4a98d3;
   height: 100%;
   width: 100%;
   overflow: hidden;
