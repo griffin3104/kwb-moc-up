@@ -5,8 +5,6 @@ import store from "./store";
 
 Vue.config.productionTip = false;
 
-console.log("router:", router);
-
 new Vue({
   router,
   store,

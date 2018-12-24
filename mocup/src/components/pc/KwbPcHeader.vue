@@ -29,7 +29,11 @@
       </div>
       <div class="m_item container-row">
         <img src="/img/m_srch.png">
-        <span>サイトマップ</span>
+        <span>サイト<br>マップ</span>
+      </div>
+      <div class="m_item container-row" @click="clickModeChange">
+        <img src="/img/mb_pc.png">
+        <span>モバイル<br>モード</span>
       </div>
     </div>
     <img id="mlogo" src="/img/mlogo.png">
@@ -37,8 +41,13 @@
 </template>
 
 <script>
-import Vue from "vue";
-export default Vue.extend({});
+export default {
+  methods:{
+    clickModeChange(){
+      this.$router.push("/mb");
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

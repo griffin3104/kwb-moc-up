@@ -3,13 +3,15 @@ import Vuex from "vuex";
 import axiosBase from "axios";
 import KwbMapStore from "./stores/KwbMapStore";
 import KwbAppStore from "./stores/KwbAppStore";
+import KwbMsgBoxStore from "./stores/KwbMsgBoxStore";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
     app: KwbAppStore,
-    map: KwbMapStore
+    map: KwbMapStore,
+    msg: KwbMsgBoxStore
   },
   actions: {
     loadConfig({ commit }) {

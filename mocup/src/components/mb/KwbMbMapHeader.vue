@@ -1,8 +1,8 @@
 <template>
   <div id="kwb-map-header" class="container-row">
     <div id="kwb-map-addr" class="box-one">東京都立川市周辺</div>
-    <div v-if="menu_show == false" id="kwb-mb-menu-show-btn">▼ 表示する</div>
-    <div v-if="menu_show == true" id="kwb-mb-menu-hide-btn">▲ かくす</div>
+    <div v-if="menu_show == false" id="kwb-mb-menu-show-btn">▼ 表示</div>
+    <div v-if="menu_show == true" id="kwb-mb-menu-hide-btn">▲ 非表示</div>
   </div>
 </template>
 
@@ -22,6 +22,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../scss/properties.scss";
+
 #kwb-map-header {
   align-items: flex-end;
 }
@@ -34,14 +36,14 @@ export default {
 }
 
 #kwb-mb-menu-show-btn {
-  border-left: 2px solid #4a98d3;
+  border-left: 2px solid $base;
   box-sizing: border-box;
   padding: 4px 8px 4px 8px;
   color: #fff;
   font-size: 0.6rem;
 }
 #kwb-mb-menu-hide-btn {
-  border-left: 2px solid #4a98d3;
+  border-left: 2px solid $base;
   box-sizing: border-box;
   padding: 4px 8px 4px 8px;
   color: #fff;

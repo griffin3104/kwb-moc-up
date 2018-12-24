@@ -7,23 +7,32 @@
       <div id="kwb-mb-time">23:59</div>
     </div>
     <img class="renew" src="/img/renew_s.png">
-    <img class="pc" src="/img/mb_pc.png">
-    <img class="menu" src="/img/mb_menu.png">
+    <img class="menu" src="/img/mb_menu.png" @click="showSideMenu">
   </div>
 </template>
 
 <script>
-import Vue from "vue";
-export default Vue.extend({});
+export default {
+  methods:{
+    showSideMenu(){
+      if (this.$store.state.app.mbSideMenuShow == false)
+        this.$store.commit("app/openSideMenu");
+      else
+        this.$store.commit("app/closeSideMenu");
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
+@import "../../scss/properties.scss";
+
 #kwb-mb-header-frame {
   align-items: flex-end;
   height: 36px;
   margin: 0px;
   padding: 0px;
-  background-color: #726a6a;
+  background-color: $bk_color;
   margin-bottom: 2px;
   img.mb_title {
     width: 124px;
@@ -31,12 +40,6 @@ export default Vue.extend({});
   img.renew {
     width: 22px;
     margin-bottom: 4px;
-    cursor: pointer;
-  }
-  img.pc {
-    margin-left: 4px;
-    margin-bottom: 2px;
-    width: 28px;
     cursor: pointer;
   }
   img.menu {

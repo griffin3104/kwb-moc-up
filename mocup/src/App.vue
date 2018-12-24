@@ -22,27 +22,38 @@ export default {
   },
   methods: {
     resize() {
-      console.log("hoge?", window.innerWidth, window.innerHeight);
       if (window.innerWidth < 1000 || window.innerHeight < 660) {
-        location.pathname = "/mb";
+        this.$router.push("/mb");
       }
     }
   },
-  created: function() {
+  created: function () {
+    //設定情報サーバリクエスト
     this.$store.dispatch("loadConfig");
+    //画面サイズが規定に見たいない場合はモバイルモードに変更
+    if (location.pathname.indexOf("mb") <= 0) {
+      if (window.innerWidth < 1000 || window.innerHeight < 660) {
+        this.$router.push("/mb");
+      }
+    }
   },
-  mounted: function() {
+  /**
+   * ライフサイクルフック mounted
+   */
+  mounted: function () {
+    //リサイズイベントを登録
     window.addEventListener("resize", this.resize);
-    /*
-    console.log("1:", location.href);
-    console.log("2:", location.hostname);
-    console.log("3:", location.pathname);
-    console.log("4:", location.search);
-    console.log("5:", location.protocol);
-    */
   },
   destroyed() {
     window.removeEventListener("resize", this.resize);
+  },
+  watch: {
+    $route: function (toRoute) {
+      if (toRoute.path === "/") {
+        this.$router.push("/pc/overview");
+        return;
+      }
+    }
   }
 };
 </script>
@@ -51,6 +62,7 @@ export default {
 @import "~leaflet/dist/leaflet.css";
 @import "./scss/reset.scss";
 @import "./scss/kwb.scss";
+@import "./scss/properties.scss";
 
 html {
   height: 100%;
@@ -60,7 +72,7 @@ html {
     ‘メイリオ’, ‘Meiryo’, ‘Yu Gothic’, ‘ＭＳ Ｐゴシック’, ‘MS PGothic’;
 }
 body {
-  background-color: #4a98d3;
+  background-color: $base;
   height: 100%;
   width: 100%;
   overflow: hidden;

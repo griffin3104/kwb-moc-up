@@ -25,7 +25,7 @@ export default Vue.extend({
           idx: 0,
           caption: "概況",
           url: "overview",
-          selected: true
+          selected: false
         },
         {
           idx: 1,
@@ -83,13 +83,23 @@ export default Vue.extend({
     tabIndex: function(newIdx, oldIdx) {
       this.tabs[newIdx].selected = true;
       this.tabs[oldIdx].selected = false;
+    },
+    $route: function(toRoute){
+      console.log("route change", toRoute);
+      for (var tabIdx in this.tabs) {
+        var tab = this.tabs[tabIdx];
+        if (toRoute.path.endsWith(tab.url)) {
+          tab.selected = true;
+          this.tabIndex = tab.idx;
+        } else {
+          tab.selected = false;
+        }
+      }
     }
   },
   mounted() {
-    console.log("mounted1:", location.pathname, this.tabs);
     for (var tabIdx in this.tabs) {
       var tab = this.tabs[tabIdx];
-      console.log("tab:", tab);
       if (location.pathname.endsWith(tab.url)) {
         tab.selected = true;
         this.tabIndex = tab.idx;
@@ -97,7 +107,6 @@ export default Vue.extend({
         tab.selected = false;
       }
     }
-    console.log("mounted2:", this.tabs);
   }
 });
 </script>

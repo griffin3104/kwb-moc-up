@@ -4,6 +4,9 @@
       <img src="/img/addr_srch.png">
     </div>
     <div id="kwb-map-addr" class="box-one">東京都立川市周辺</div>
+    <div id="kwb-map-cal">
+      <img src="/img/calendar.png">
+    </div>
     <div id="kwb-map-date">2018/12/31</div>
     <div id="kwb-map-time">23:59</div>
     <div id="kwb-map-reload">
@@ -48,6 +51,14 @@ export default {};
   color: #fff;
   padding: 4px 2px 4px 2px;
   box-sizing: border-box;
+}
+#kwb-map-cal {
+  padding: 4px 4px 2px 4px;
+  img {
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+  }
 }
 #kwb-map-reload {
   padding: 4px 4px 2px 4px;
