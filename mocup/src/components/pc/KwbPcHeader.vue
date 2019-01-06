@@ -29,11 +29,15 @@
       </div>
       <div class="m_item container-row">
         <img src="/img/m_srch.png">
-        <span>サイト<br>マップ</span>
+        <span>サイト
+          <br>マップ
+        </span>
       </div>
       <div class="m_item container-row" @click="clickModeChange">
         <img src="/img/mb_pc.png">
-        <span>モバイル<br>モード</span>
+        <span>モバイル
+          <br>モード
+        </span>
       </div>
     </div>
     <img id="mlogo" src="/img/mlogo.png">
@@ -41,10 +45,13 @@
 </template>
 
 <script>
+import { triggerEvent } from "../../lib/util.js";
+
 export default {
-  methods:{
-    clickModeChange(){
+  methods: {
+    clickModeChange() {
       this.$router.push("/mb");
+      triggerEvent(document.body, "resize");
     }
   }
 };

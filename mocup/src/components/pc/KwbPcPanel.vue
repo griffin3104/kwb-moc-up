@@ -17,7 +17,7 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  data: function() {
+  data: function () {
     return {
       tabIndex: 0,
       tabs: [
@@ -75,16 +75,21 @@ export default Vue.extend({
       }
     },
     setTabIndex(idx) {
+      if (idx % 2) {
+        this.$store.commit("msg/showInfo", { caption: "キャプション", msg: "メッセージ表示(" + idx + ")" });
+      } else {
+        this.$store.commit("msg/showWarn", { caption: "キャプション", msg: "メッセージ表示(" + idx + ")" });
+      }
       this.tabIndex = idx;
       this.$router.push("/pc/" + this.tabs[idx].url);
     }
   },
   watch: {
-    tabIndex: function(newIdx, oldIdx) {
+    tabIndex: function (newIdx, oldIdx) {
       this.tabs[newIdx].selected = true;
       this.tabs[oldIdx].selected = false;
     },
-    $route: function(toRoute){
+    $route: function (toRoute) {
       console.log("route change", toRoute);
       for (var tabIdx in this.tabs) {
         var tab = this.tabs[tabIdx];

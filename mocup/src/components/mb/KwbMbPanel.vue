@@ -38,6 +38,8 @@
 </template>
 
 <script>
+import { triggerEvent } from "../../lib/util.js";
+
 export default {
   computed: {
     show: {
@@ -53,6 +55,7 @@ export default {
       } else {
         this.$store.commit("app/closeSideMenu");
         this.$router.push("/");
+        triggerEvent(document.body, "resize");
       }
     }
   }

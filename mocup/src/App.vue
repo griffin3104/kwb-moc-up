@@ -5,12 +5,14 @@
       <kwb-map></kwb-map>
       <router-view name="panel"/>
     </section>
+    <kwb-msg-box></kwb-msg-box>
   </div>
 </template>
 
 <script>
 //川防地図コンポーネント
 import KwbMap from "./components/KwbMap.vue";
+import KwbMsgBox from "./components/KwbMsgBox.vue"
 
 /**
  * Applicationメインコンポーネント
@@ -18,7 +20,7 @@ import KwbMap from "./components/KwbMap.vue";
 export default {
   name: "app",
   components: {
-    KwbMap
+    KwbMap, KwbMsgBox
   },
   methods: {
     resize() {
