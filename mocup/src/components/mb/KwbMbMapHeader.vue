@@ -1,6 +1,6 @@
 <template>
   <div id="kwb-map-header" class="container-row">
-    <div id="kwb-map-addr" class="box-one">東京都立川市周辺</div>
+    <div id="kwb-map-addr" class="box-one">{{mapAddress}}</div>
     <div v-if="menu_show == false" id="kwb-mb-menu-show-btn">▼ 表示</div>
     <div v-if="menu_show == true" id="kwb-mb-menu-hide-btn">▲ 非表示</div>
   </div>
@@ -9,6 +9,11 @@
 <script>
 export default {
   computed: {
+    mapAddress: {
+      get() {
+        return this.$store.state.map.address;
+      }
+    },
     menu_show: {
       get() {
         return this.$store.state.app.mbMenuShow;

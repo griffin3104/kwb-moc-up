@@ -3,18 +3,33 @@
     <img class="mb_title" src="/img/mb_title.png">
     <div class="box-one"></div>
     <div id="kwb-mb-date-frame" class="container-col">
-      <div id="kwb-mb-date">2018/12/31</div>
-      <div id="kwb-mb-time">23:59</div>
+      <div id="kwb-mb-date">{{appDate}}</div>
+      <div id="kwb-mb-time">{{appTime}}</div>
     </div>
-    <img class="renew" src="/img/renew_s.png">
+    <img class="renew" src="/img/renew_s.png" @click="renew">
     <img class="menu" src="/img/mb_menu.png" @click="showSideMenu">
   </div>
 </template>
 
 <script>
 export default {
-  methods:{
-    showSideMenu(){
+  computed: {
+    appDate: {
+      get() {
+        return this.$store.state.app.appTime.dateStr;
+      }
+    },
+    appTime: {
+      get() {
+        return this.$store.state.app.appTime.timeStr;
+      }
+    }
+  },
+  methods: {
+    renew() {
+      this.$store.commit("app/renewTime");
+    },
+    showSideMenu() {
       if (this.$store.state.app.mbSideMenuShow == false)
         this.$store.commit("app/openSideMenu");
       else

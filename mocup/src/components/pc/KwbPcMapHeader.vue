@@ -3,20 +3,44 @@
     <div id="kwb-map-addr-srch">
       <img src="/img/addr_srch.png">
     </div>
-    <div id="kwb-map-addr" class="box-one">東京都立川市周辺</div>
+    <div id="kwb-map-addr" class="box-one">{{mapAddress}}</div>
     <div id="kwb-map-cal">
       <img src="/img/calendar.png">
     </div>
-    <div id="kwb-map-date">2018/12/31</div>
-    <div id="kwb-map-time">23:59</div>
+    <div id="kwb-map-date">{{appDate}}</div>
+    <div id="kwb-map-time">{{appTime}}</div>
     <div id="kwb-map-reload">
-      <img src="/img/renew_s.png">
+      <img src="/img/renew_s.png" @click="renew">
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    mapAddress: {
+      get() {
+        return this.$store.state.map.address;
+      }
+    },
+    appDate: {
+      get() {
+        return this.$store.state.app.appTime.dateStr;
+      }
+    },
+    appTime: {
+      get() {
+        return this.$store.state.app.appTime.timeStr;
+      }
+    }
+  },
+  methods: {
+    renew() {
+      console.log("hhh");
+      return this.$store.commit("app/renewTime");
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

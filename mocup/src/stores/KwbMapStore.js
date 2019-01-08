@@ -3,7 +3,8 @@ export default {
   state: {
     zoom: 4,
     center: [0, 0],
-    tileUrl: ""
+    tileUrl: "",
+    address: "東京都立川市"
   },
   mutations: {
     loadMapConfig(state, mapConfig) {
