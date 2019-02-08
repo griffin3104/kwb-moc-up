@@ -1,3 +1,5 @@
+@import "./properties.scss";
+
 /* 縦型コンテナ */
 .container-col {
   display: flex;
@@ -21,9 +23,9 @@
 }
 
 .content-caption {
-  background-color: #3880c0;
+  background-color: $subtitle_bk_color;
   font-weight: bold;
-  color: #fff;
+  color: $subtitle_font_color;
   padding: 5px 8px 4px 8px;
   font-size: 0.8rem;
 }

@@ -1,0 +1,154 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4326"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          135,
+          35
+        ]
+      },
+      "properties": {
+        "itmkndCd": 4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.9216527777778,
+          35.3419388888889
+        ]
+      },
+      "properties": {
+        "itmkndCd": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130,
+          33
+        ]
+      },
+      "properties": {
+        "itmkndCd": 6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140,
+          40
+        ]
+      },
+      "properties": {
+        "itmkndCd": 7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140,
+          39
+        ]
+      },
+      "properties": {
+        "itmkndCd": 12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140,
+          38
+        ]
+      },
+      "properties": {
+        "itmkndCd": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140,
+          37
+        ]
+      },
+      "properties": {
+        "itmkndCd": 200
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140,
+          36
+        ]
+      },
+      "properties": {
+        "itmkndCd": 100
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140,
+          35
+        ]
+      },
+      "properties": {
+        "itmkndCd": 201
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140,
+          34
+        ]
+      },
+      "properties": {
+        "itmkndCd": 20
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140,
+          33
+        ]
+      },
+      "properties": {
+        "itmkndCd": 2
+      }
+    }
+  ]
+}

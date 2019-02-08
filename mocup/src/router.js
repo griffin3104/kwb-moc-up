@@ -80,6 +80,13 @@ export default new Router({
         panel: () => import("./components/mb/KwbMbPanel.vue"),
         map_header: () => import("./components/mb/KwbMbMapHeader.vue")
       }
+    },
+    {
+      path: "/obs",
+      name: "ObsMode",
+      components: {
+        header: () => import("./components/KwbObs.vue")
+      }
     }
   ]
 });

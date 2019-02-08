@@ -33,28 +33,13 @@
           <br>マップ
         </span>
       </div>
-      <div class="m_item container-row" @click="clickModeChange">
-        <img src="/img/mb_pc.png">
-        <span>モバイル
-          <br>モード
-        </span>
-      </div>
     </div>
     <img id="mlogo" src="/img/mlogo.png">
   </div>
 </template>
 
 <script>
-import { triggerEvent } from "../../lib/util.js";
-
-export default {
-  methods: {
-    clickModeChange() {
-      this.$router.push("/mb");
-      triggerEvent(document.body, "resize");
-    }
-  }
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>

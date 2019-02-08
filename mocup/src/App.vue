@@ -12,7 +12,7 @@
 <script>
 //川防地図コンポーネント
 import KwbMap from "./components/KwbMap.vue";
-import KwbMsgBox from "./components/KwbMsgBox.vue"
+import KwbMsgBox from "./components/KwbMsgBox.vue";
 
 /**
  * Applicationメインコンポーネント
@@ -20,18 +20,20 @@ import KwbMsgBox from "./components/KwbMsgBox.vue"
 export default {
   name: "app",
   components: {
-    KwbMap, KwbMsgBox
+    KwbMap,
+    KwbMsgBox
   },
   methods: {
     resize() {
-      if (window.innerWidth < 1000 || window.innerHeight < 660) {
-        this.$router.push("/mb");
-      }
+      this.$store.commit("app/setScreenSize", {
+        size: [window.innerWidth, window.innerHeight]
+      });
     }
   },
-  created: function () {
+  created: function() {
     //設定情報サーバリクエスト
     this.$store.dispatch("loadConfig");
+
     //画面サイズが規定に見たいない場合はモバイルモードに変更
     if (location.pathname.indexOf("mb") <= 0) {
       if (window.innerWidth < 1000 || window.innerHeight < 660) {
@@ -42,17 +44,35 @@ export default {
   /**
    * ライフサイクルフック mounted
    */
-  mounted: function () {
+  mounted: function() {
+    if (location.pathname.indexOf("obs") == 1) {
+      document.getElementById("main-section").style.display = "none";
+    }
     //リサイズイベントを登録
-    window.addEventListener("resize", this.resize);
+    setTimeout(() => {
+      window.addEventListener("resize", this.resize);
+    }, 200);
   },
   destroyed() {
     window.removeEventListener("resize", this.resize);
   },
   watch: {
-    $route: function (toRoute) {
+    $route: function(toRoute) {
       if (toRoute.path === "/") {
+        this.$store.commit("app/setScreenMode", "pc");
         this.$router.push("/pc/overview");
+        return;
+      }
+      if (toRoute.path === "/pc") {
+        this.$store.commit("app/setScreenMode", "pc");
+        return;
+      }
+      if (toRoute.path === "/mb") {
+        this.$store.commit("app/setScreenMode", "mb");
+        return;
+      }
+      if (toRoute.path === "/obs") {
+        this.$store.commit("app/setScreenMode", "obs");
         return;
       }
     }
@@ -84,6 +104,8 @@ body {
 #main {
   height: 100%;
   width: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 #main-section {

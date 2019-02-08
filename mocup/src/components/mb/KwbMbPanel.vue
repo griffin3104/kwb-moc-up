@@ -30,32 +30,15 @@
       <img src="/img/m_srch.png">
       <span>表示設定</span>
     </div>
-    <div class="btn container-row" @click="changeMode">
-      <img src="/img/mb_pc.png">
-      <span>PCモードに切替え</span>
-    </div>
   </div>
 </template>
 
 <script>
-import { triggerEvent } from "../../lib/util.js";
-
 export default {
   computed: {
     show: {
       get() {
         return this.$store.state.app.mbSideMenuShow;
-      }
-    }
-  },
-  methods: {
-    changeMode() {
-      if (window.innerWidth < 1000 || window.innerHeight < 660) {
-        //TODO: アラートを出す（部品を作成すること）
-      } else {
-        this.$store.commit("app/closeSideMenu");
-        this.$router.push("/");
-        triggerEvent(document.body, "resize");
       }
     }
   }

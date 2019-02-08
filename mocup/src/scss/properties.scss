@@ -1,2 +1,22 @@
 $base: #4a98d3;
 $bk_color: #726a6a;
+
+//共通設定 -- サブタイトル領域
+$subtitle_bk_color: #4a98d3;
+$subtitle_font_color: #fff;
+
+//観測所画面 -- 文字色
+$obs_font_white: #fff;
+$obs_font_black: #303030;
+
+//観測所画面 -- コンテンツ領域
+$content_base_color: #726a6a;
+$content_main_color: #fff;
+
+//観測所画面 -- グラフ凡例ボタン
+$content_legend_bk: #aaaaaa;
+$content_legend_font: #fff;
+
+//観測所一覧画面 -- 表示選択ボタン
+$obs_list_tab_act_bk: #726a6a;
+$obs_list_tab_non_act_bk: #4a98d3;

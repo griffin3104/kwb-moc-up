@@ -8,7 +8,7 @@
         @click="setTabIndex(tab.idx)"
       >{{tab.caption}}</li>
     </ul>
-    <div id="kwb-pc-contents-frame" class="box-one">
+    <div id="kwb-pc-contents-frame" class="box-one container-col">
       <router-view name="pc_contents"></router-view>
     </div>
   </div>
@@ -17,7 +17,7 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  data: function () {
+  data: function() {
     return {
       tabIndex: 0,
       tabs: [
@@ -75,21 +75,27 @@ export default Vue.extend({
       }
     },
     setTabIndex(idx) {
-      if (idx % 2) {
-        this.$store.commit("msg/showInfo", { caption: "キャプション", msg: "メッセージ表示(" + idx + ")" });
-      } else {
-        this.$store.commit("msg/showWarn", { caption: "キャプション", msg: "メッセージ表示(" + idx + ")" });
-      }
+      // if (idx % 2) {
+      //   this.$store.commit("msg/showInfo", {
+      //     caption: "キャプション",
+      //     msg: "メッセージ表示(" + idx + ")"
+      //   });
+      // } else {
+      //   this.$store.commit("msg/showWarn", {
+      //     caption: "キャプション",
+      //     msg: "メッセージ表示(" + idx + ")"
+      //   });
+      // }
       this.tabIndex = idx;
       this.$router.push("/pc/" + this.tabs[idx].url);
     }
   },
   watch: {
-    tabIndex: function (newIdx, oldIdx) {
+    tabIndex: function(newIdx, oldIdx) {
       this.tabs[newIdx].selected = true;
       this.tabs[oldIdx].selected = false;
     },
-    $route: function (toRoute) {
+    $route: function(toRoute) {
       console.log("route change", toRoute);
       for (var tabIdx in this.tabs) {
         var tab = this.tabs[tabIdx];
@@ -139,7 +145,7 @@ export default Vue.extend({
     padding: 5px 4px 5px 4px;
     flex: 1;
     font-size: 0.7rem;
-    color: #a0a0a0;
+    color: #f0f0f0;
     text-align: center;
     margin-right: 2px;
   }
@@ -150,7 +156,7 @@ export default Vue.extend({
   }
   .non_act {
     background-color: #808080;
-    color: #a0a0a0;
+    color: #f0f0f0;
     font-weight: normal;
   }
 }

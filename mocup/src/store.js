@@ -4,6 +4,9 @@ import axiosBase from "axios";
 import KwbMapStore from "./stores/KwbMapStore";
 import KwbAppStore from "./stores/KwbAppStore";
 import KwbMsgBoxStore from "./stores/KwbMsgBoxStore";
+import KwbTmStore from "./stores/KwbTmStore";
+import KwbRiverwarnStore from "./stores/KwbRiverwarnStore";
+import KwbMapRiverwarnStore from "./stores/KwbMapRiverwarnStore";
 
 Vue.use(Vuex);
 
@@ -11,7 +14,10 @@ export default new Vuex.Store({
   modules: {
     app: KwbAppStore,
     map: KwbMapStore,
-    msg: KwbMsgBoxStore
+    msg: KwbMsgBoxStore,
+    tm: KwbTmStore,
+    riverwarn: KwbRiverwarnStore,
+    mapRiverwarn: KwbMapRiverwarnStore
   },
   actions: {
     loadConfig({ commit }) {
