@@ -1,0 +1,14 @@
+{
+  "configApi": {
+    "map": {
+      "zoom": 4,
+      "minZoom": 4,
+      "maxZoom": 17,
+      "center": [35.67773, 139.754813],
+      "tileUrl": "https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png"
+    },
+    "riverWarn": {
+      "overviewUrl": "/img/rw"
+    }
+  }
+}
